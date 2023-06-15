@@ -1,23 +1,24 @@
-# /////////////////////////
-class Item:
-   def calculate_total_price(self, x , y):
-       return x * y
+# # /////////////////////////
+# class Item:
+#    def calculate_total_price(self, x , y):
+#        return x * y
    
-item1 = Item()
-item1.name = "Phone"
-item1.price = 100
-item1.quantity = 5
-print(item1.calculate_total_price(item1.price, item1.quantity))
+# item1 = Item()
+# item1.name = "Phone"
+# item1.price = 100
+# item1.quantity = 5
+# print(item1.calculate_total_price(item1.price, item1.quantity))
 
 
-item2 = Item()
-item2.name = "Laptop"
-item2.price = 1000
-item2.quantity = 3
-print(item2.calculate_total_price(item2.price, item2.quantity))
+# item2 = Item()
+# item2.name = "Laptop"
+# item2.price = 1000
+# item2.quantity = 3
+# print(item2.calculate_total_price(item2.price, item2.quantity))
 
 
-# /////////////////////////
+
+# ///////////////////////////////////////////////
 # class Item:
 #     def __init__(self, name, price, quantity=0):
 #         self.name = name 
@@ -33,6 +34,8 @@ print(item2.calculate_total_price(item2.price, item2.quantity))
 
 # print(item1.calculate_total_price())
 # print(item2.calculate_total_price())
+
+
 
 # /////////////////////////
 # class Item:
@@ -161,14 +164,14 @@ print(item2.calculate_total_price(item2.price, item2.quantity))
 # for instance in Item.all:
 #     print(instance.name)
 
-    
 
-# /////////////////// not work ////////////////////////////////
+# # # //////////////////// @classmethod///////////////////////////////
 # import csv
+
 # class Item:
 #     pay_rate = 0.8 # The pay rate after 20% discount
 #     all = []
-#     def __init__(self, name:str, price:float, quantity=0):
+#     def __init__(self, name: str, price: float, quantity=0):
 #         # Run validations to the received arguments
 #         assert price >= 0, f"Price {price} is not greater than or equal to zero!"
 #         assert quantity >= 0, f"Quantity {quantity} is not greater or equal to zero!"
@@ -190,8 +193,9 @@ print(item2.calculate_total_price(item2.price, item2.quantity))
 #     @classmethod
 #     def instantiate_from_csv(cls):
 #         with open('items.csv', 'r') as f:
-#             reader = csv.DictReader(f)
+#             reader = csv.DictReader(f)          
 #             items = list(reader)
+            
 
 #         for item in items:
 #             Item(
@@ -199,15 +203,14 @@ print(item2.calculate_total_price(item2.price, item2.quantity))
 #                 price=float(item.get('price')),
 #                 quantity=int(item.get('quantity')),
 #             )
-           
+
 #     def __repr__(self):
-#         return f"Item('{self.name}', {self.price}, {self.quantity})"     
+#         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
 # Item.instantiate_from_csv()
-# print(Item.all)
+# # print(Item.all)
 
-
-# ///////////////////////////////////////////////////
+# # # //////////////////////  @staticmethod  /////////////////////////////
 # import csv
 
 
@@ -261,7 +264,59 @@ print(item2.calculate_total_price(item2.price, item2.quantity))
 #     def __repr__(self):
 #         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
+# # print(Item.is_integer(7))
 
 
-# print(Item.is_integer(7))
+
+
+# # ////////////////////// __init__()   /////////////////////////////
+# from parent_class import Item 
+
+# class Phone(Item):
+#     all = []
+#     def __init__(self, name: str, price: float, quantity=0, broken_phones=0):
+#         # Run validations to the received arguments
+#         assert price >= 0, f"Price {price} is not greater than or equal to zero!"
+#         assert quantity >= 0, f"Quantity {quantity} is not greater or equal to zero!"
+#         assert broken_phones >= 0, f"Broken Phones {broken_phones} is not greater or equal to zero!"
+
+#         # Assign to self object
+#         self.name = name
+#         self.price = price
+#         self.quantity = quantity
+#         self.broken_phones = broken_phones
+
+#         # Actions to execute
+#         Phone.all.append(self)
+
+# phone1 = Phone("JscPhonev10", 500, 5, 1)
+# print(phone1.calculate_total_price())
+# phone2 = Phone("JscPhonev20", 700, 5, 1)
+# print(Item.all)
+# print(Phone.all)
+
+# # //////////////////////  super().__init__() /////////////////////////////
+
+# from parent_class import Item 
+# class Phone(Item):   
+#     def __init__(self, name: str, price: float, quantity=0, broken_phones=0):       
+#         super().__init__(name, price, quantity)        
+      
+#         assert broken_phones >= 0, f"Broken Phones {broken_phones} is not greater or equal to zero!"
+             
+#         self.broken_phones = broken_phones
+
+   
+
+# phone1 = Phone("JscPhonev10", 500, 5, 1)
+# print(phone1.calculate_total_price())
+# phone2 = Phone("JscPhonev20", 700, 5, 1)
+
+# print(Item.all)
+# print(Phone.all)
+
+        
+    
+
+
 

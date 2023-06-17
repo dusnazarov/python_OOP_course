@@ -152,3 +152,51 @@
 
 # print(item.pay_rate)
 # print(Item.pay_rate)
+
+
+
+# #////////////////////////////////////////////////
+# class Item: 
+
+#     def __init__(self, name):              
+#         self.name = name
+          
+# item1 = Item("MyItem")
+# # item1.name = 'OtherItem'
+# print(item1.name)
+
+# # #///////////////////  Read-Only Attribute   /////////////////////////
+# class Item: 
+
+#     def __init__(self, name):              
+#         self._name = name
+          
+#     @property
+#     # property decorator = Read-Only Attribute
+#     def name(self):
+#         return self._name
+        
+# item1 = Item("MyItem")
+# # item1.name = 'OtherItem'   # it does not work becouse @property decorator = Read-Only Attribute
+# print(item1.name)
+
+# # ///////////////////  Setter and Getter  /////////////////////////
+class Item: 
+
+    def __init__(self, name):              
+        self.__name = name
+          
+    @property
+    # property decorator = Read-Only Attribute
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        # print(value)
+        self.__name = value
+        
+item1 = Item("MyItem")
+item1.name = 'OtherItem'  
+print(item1.name)
+

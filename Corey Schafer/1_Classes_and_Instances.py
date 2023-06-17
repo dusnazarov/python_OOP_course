@@ -38,28 +38,28 @@
 # print(emp_2.email)
 
 
-#////////////////////////////////////////
-class Employee:    
-    def __init__(self, first, last, pay):
-        self.first = first
-        self.last = last
-        self.pay = pay
-        self.email = first + '.' + last + '@gmail.com'
+# #////////////////////////////////////////
+# class Employee:    
+#     def __init__(self, first, last, pay):
+#         self.first = first
+#         self.last = last
+#         self.pay = pay
+#         self.email = first + '.' + last + '@gmail.com'
     
-    def fullname(self):
-        return '{} {}'.format(self.first, self.last)
+#     def fullname(self):
+#         return '{} {}'.format(self.first, self.last)
 
-    def user_email(self):
-        return '{}'.format(self.email)          
+#     def user_email(self):
+#         return '{}'.format(self.email)          
        
 
-emp_1 = Employee('elyor', 'dusnazarov', 5000)
-emp_2 = Employee('Test', 'User', 6000)
+# emp_1 = Employee('elyor', 'dusnazarov', 5000)
+# emp_2 = Employee('Test', 'User', 6000)
 
-print(emp_1.fullname())
-print(emp_1.user_email())
-print(emp_2.fullname())
-print(emp_2.user_email())
+# print(emp_1.fullname())
+# print(emp_1.user_email())
+# print(emp_2.fullname())
+# print(emp_2.user_email())
 
 
 

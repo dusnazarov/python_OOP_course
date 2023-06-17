@@ -22,7 +22,7 @@
 # print(emp_1.pay)
 
 
-#////////////////////////////////////////
+# #////////////////////////////////////////
 # class Employee:    
 #     raise_amount = 1.04  
       
@@ -64,7 +64,7 @@ class Employee:
         self.last = last
         self.pay = pay
         self.email = first + '.'+ last + '@company.com'        
-        Employee.num_of_emps +=1
+        Employee.num_of_emps += 1
     
     def fullname(self):
         return '{} {}'.format(self.first, self.last) 
@@ -78,3 +78,4 @@ emp_1 = Employee('Corey','Schafer', 5000)
 emp_2 = Employee('Test','User', 6000)
 
 print(Employee.num_of_emps)
+

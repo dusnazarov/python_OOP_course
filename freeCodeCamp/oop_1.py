@@ -208,7 +208,7 @@
 #         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
 # Item.instantiate_from_csv()
-# # print(Item.all)
+# print(Item.all)
 
 # # # //////////////////////  @staticmethod  /////////////////////////////
 # import csv

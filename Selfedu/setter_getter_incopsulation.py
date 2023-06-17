@@ -47,25 +47,25 @@
 # print(pt.get_coord())
 
 # /////////////// it does not work /////////////////
-class Point:
-    def __init__(self, x=0, y=0):
-        self.__x = x
-        self.__y = y
+# class Point:
+#     def __init__(self, x=0, y=0):
+#         self.__x = x
+#         self.__y = y
         
-    def set_coord(self, x, y):
-        if type(x) in (int, float) and type(y) in (int, float):
-            self.__x = x
-            self.__y = y
-        else:
-            raise ValueError("Coordinate must be number")
+#     def set_coord(self, x, y):
+#         if type(x) in (int, float) and type(y) in (int, float):
+#             self.__x = x
+#             self.__y = y
+#         else:
+#             raise ValueError("Coordinate must be number")
 
-    def get_coord(self):
-        return self.__x, self.__y 
+#     def get_coord(self):
+#         return self.__x, self.__y 
                 
 
-pt = Point(1, 2)
-pt.set_coord(10, 20)
-print(pt.get_coord())
+# pt = Point(1, 2)
+# pt.set_coord(10, 20)
+# print(pt.get_coord())
 
 
 

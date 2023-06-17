@@ -3,10 +3,8 @@
       
 #     def __init__(self, first, last):
 #         self.first = first
-#         self.last = last    
-#         self.email = first + '.'+ last + '@company.com'
-                
-    
+#         self.last = last
+     
 #     def fullname(self):
 #         return '{} {}'.format(self.first, self.last)
  
@@ -14,9 +12,6 @@
 # emp_1 = Employee('Elyor','Dusnazarov')
 
 # emp_1.first = 'Shuhrat'
-
-# print(emp_1.first)
-# print(emp_1.email)
 # print(emp_1.fullname())
 
 
@@ -25,35 +20,8 @@
       
 #     def __init__(self, first, last):
 #         self.first = first
-#         self.last = last
-            
-#     def email(self):
-#         return '{}.{}@gmail.com'.format(self.first, self.last)   
-                
+#         self.last = last        
     
-#     def fullname(self):
-#         return '{} {}'.format(self.first, self.last)
- 
-
-# emp_1 = Employee('Elyor','Dusnazarov')
-
-# emp_1.first = 'Shuhrat'
-
-# print(emp_1.first)
-# print(emp_1.email())
-# print(emp_1.fullname())
-
-
-# #////////////////////////////////////////
-# class Employee: 
-      
-#     def __init__(self, first, last):
-#         self.first = first
-#         self.last = last
-        
-#     @property        
-#     def email(self):
-#         return '{}.{}@gmail.com'.format(self.first, self.last)   
                 
 #     @property 
 #     def fullname(self):
@@ -61,13 +29,34 @@
     
 
 # emp_1 = Employee('Elyor','Dusnazarov')
-
-# emp_1.first = 'Shuhrat'
-
-# print(emp_1.first)
-# print(emp_1.email)
+# # emp_1.fullname = 'Shuhrat Dusnazarov'   # it does not work  becouse   @property decorators = read only -method
 # print(emp_1.fullname)
 
+# #////////////////////////////////////////
+# class Employee:
+          
+#     def __init__(self, first, last):
+#         self.first = first
+#         self.last = last
+        
+
+#     @property 
+#     def fullname(self):
+#         return '{} {}'.format(self.first, self.last)
+    
+#     @fullname.setter
+#     def fullname(self, name):
+#         # print(name)
+#         first, last = name.split(' ')
+#         # print(first, last)
+      
+#         self.first = first
+#         self.last = last
+    
+# emp_1 = Employee('Elyor','Dusnazarov')
+# emp_1.fullname = 'Shuhrat Dusnazarov'
+
+# print(emp_1.fullname)
 
 # #////////////////////////////////////////
 # class Employee: 
@@ -76,10 +65,7 @@
 #         self.first = first
 #         self.last = last
         
-#     @property        
-#     def email(self):
-#         return '{}.{}@gmail.com'.format(self.first, self.last)   
-                
+    
 #     @property 
 #     def fullname(self):
 #         return '{} {}'.format(self.first, self.last)
@@ -89,50 +75,65 @@
 #         first, last = name.split(' ')
 #         self.first = first
 #         self.last = last
+
+#     @fullname.deleter
+#     def fullname(self):
+#         print('Delete Name!')
+#         self.first = None
+#         self.last = None
     
 # emp_1 = Employee('Elyor','Dusnazarov')
 
 # emp_1.fullname = 'Elyor Dusnazarov'
 
-# print(emp_1.first)
-# print(emp_1.email)
+
+# print(emp_1.fullname)
+
+# del emp_1.fullname
 # print(emp_1.fullname)
 
 
-
-# #////////////////////////////////////////
-class Employee: 
-      
-    def __init__(self, first, last):
-        self.first = first
-        self.last = last
+# class Employee:
+#     def __init__(self, first, last):
+#         self.first = first
+#         self.last = last
         
-    @property        
-    def email(self):
-        return '{}.{}@gmail.com'.format(self.first, self.last)   
-                
-    @property 
-    def fullname(self):
-        return '{} {}'.format(self.first, self.last)
+# @property
+# def fulname(self, amount):  
+#     first, last = amount.split(' ')
     
-    @fullname.setter
-    def fullname(self, name):
-        first, last = name.split(' ')
-        self.first = first
-        self.last = last
+#     self.first = first
+#     self.last = last
+#     print(self.last, self.first)
 
-    @fullname.deleter
-    def fullname(self):
-        print('Delete Name!')
-        self.first = None
-        self.last = None
+
+# emp1 = Employee('Elyor', 'Dusnazarov')
+
+# emp1.fulname = 'Shuhrat Dusnazarov'
+
+# print(emp1.fulname)
+
+
+        
+# /////////////////////////////
+# def fulname(name):  
+#     first, last = name.split(' ')
+   
+#     print(first, last)   
+
+# fulname('Elyordus, Dusnazarov')
+
+
+# /////////////////////////////
+# class Post:
+
     
-emp_1 = Employee('Elyor','Dusnazarov')
+#     def fulname(name):  
+#         first, last = name.split(' ')
+   
+#         print(first, last)   
 
-emp_1.fullname = 'Elyor Dusnazarov'
+# Post.fulname('Elyordus, Dusnazarov')
 
-print(emp_1.first)
-print(emp_1.email)
-print(emp_1.fullname)
+    
 
-del emp_1.fullname

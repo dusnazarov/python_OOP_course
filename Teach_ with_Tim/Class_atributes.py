@@ -47,7 +47,7 @@ class  Person:
 
     @classmethod
     def add_person(cls):
-        cls.number_of_people +=1 
+        cls.number_of_people += 1 
         
 
 
